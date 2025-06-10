@@ -23,6 +23,7 @@
     "@langchain/core": "^0.3.57",
     "@langchain/langgraph": "^0.3.1",
     "@langchain/openai": "^0.5.12",
+    "@langchain/tavily": "^0.1.2",
     "@nestjs/common": "^10.0.0",
     "@nestjs/config": "^4.0.2",
     "@nestjs/core": "^10.0.0",
