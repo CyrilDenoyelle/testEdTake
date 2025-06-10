@@ -53,6 +53,8 @@ Ce projet utilise une architecture basée sur des agents autonomes pour gérer u
 Chaque agent est spécialisé dans une tâche spécifique et peut fonctionner de manière indépendante.
 (j'ai mis des endpoints pour pouvoir tester chaque agent séparément)
 
+Pour avoir la main sur la conf de base de tout les agents au même endroit: le code de création d'agent est centralisé dans un seul service `AgentService` qui est réutilisé par tous les agents.
+
 ## Problèmes
 
 - l'agent coordinateur ne donne pas le résultat de la recherche a l'agent de gestion du panier
