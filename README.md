@@ -32,6 +32,12 @@
 $ npm install
 ```
 
+create a .env file
+
+```
+OPENAI_API_KEY="<openai-api-key>"
+TAVILY_API_KEY="<tavily-api-key>
+```
 ## Compile and run the project
 
 ```bash
