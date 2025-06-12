@@ -72,12 +72,12 @@ export class CartFunctionsService {
     return `Le produit "${product.name}" a été ajouté au panier.`;
   }
 
-  async removeProduct(productUuid: string): Promise<string> {
+  async removeProduct({ uuid }: { uuid: string }): Promise<string> {
     const cart = this.readCart();
-    const productIndex = cart.findIndex((p) => p.uuid === productUuid);
+    const productIndex = cart.findIndex((p) => p.uuid === uuid);
 
     if (productIndex === -1) {
-      return `Le produit n'a pas été trouvé dans le panier. (id: ${productUuid})`;
+      return `Le produit n'a pas été trouvé dans le panier. (id: ${uuid})`;
     }
 
     const removedProduct = cart[productIndex];
@@ -93,7 +93,9 @@ export class CartFunctionsService {
       return 'Le panier est vide.';
     }
 
-    const productList = cart.map((p) => `- ${p.name} (${p.url})`).join('\n');
-    return `Le panier contient les articles suivants :\n${productList}`;
+    const productList = cart
+      .map((p) => `[[${p.name}]] [[${p.uuid}]], [[${p.url}]]`)
+      .join('\n');
+    return `Le panier contient les articles suivants (au format "[[name]], [[uuid]], [[url]]") :\n${productList}`;
   }
 }
